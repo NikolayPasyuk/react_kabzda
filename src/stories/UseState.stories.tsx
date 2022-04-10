@@ -7,7 +7,7 @@ export default {
 function generateDate() {
     //difficult counting
     console.log('generateDate')
-    return 37466390
+    return 1
 }
 
 export const Example1 = () => {
@@ -15,10 +15,11 @@ export const Example1 = () => {
 
     //const initialValue = useMemo(generateDate, [])
 
-    const [counter, setCounter] = useState(generateDate)
+    const [counter, setCounter] = useState<number>(generateDate)
 
     return <>
-        <button onClick={() => setCounter(counter + 1)}>+</button>
+        <button onClick={() => setCounter(state => state + 1)}>+
+        </button>
         {counter}
     </>
 }
