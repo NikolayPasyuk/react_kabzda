@@ -1,12 +1,20 @@
-import React, {useState} from 'react';
+import React, {useMemo, useState} from 'react';
 
 export default {
     title: 'useState demo'
 }
 
+function generateDate() {
+    //difficult counting
+    return 37466390
+}
+
 export const Example1 = () => {
     console.log('Example1')
-    let [counter, setCounter] = useState(0)
+
+    const initialValue = useMemo(generateDate, [])
+
+    const [counter, setCounter] = useState(initialValue)
 
     return <>
         <button onClick={() => setCounter(counter + 1)}>+</button>
