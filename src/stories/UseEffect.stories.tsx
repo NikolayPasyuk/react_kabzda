@@ -41,9 +41,13 @@ export const SetTimeoutExample = () => {
     console.log('SetTimeoutExample')
 
     useEffect(() => {
-        console.log('useEffect every render')
-        document.title = counter.toString()
-    })
+
+        setTimeout(() => {
+            console.log('setTimeout')
+            document.title = counter.toString()
+        }, 1000)
+
+    }, [counter])
 
     return <>
         Hello, {counter} {fake}
