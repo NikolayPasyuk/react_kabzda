@@ -11,7 +11,8 @@ export const SimpleExample = () => {
     console.log('SimpleExample')
 
     useEffect(() => {
-
+        console.log('useEffect')
+        document.title = counter.toString()
     })
 
     return <>
