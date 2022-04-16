@@ -2,6 +2,8 @@ import React, {useEffect, useState} from 'react';
 
 type PropsType = {}
 
+const get2digitsString = (num: number) => num < 10 ? '0' + num : num
+
 export const Clock: React.FC<PropsType> = (props) => {
     const [date, setDate] = useState(new Date())
 
@@ -10,8 +12,6 @@ export const Clock: React.FC<PropsType> = (props) => {
             setDate(new Date())
         }, 1000)
     }, [])
-
-    const get2digitsString = (num: number) => num < 10 ? '0' + num : num
 
     const secondsString = get2digitsString(date.getSeconds())
 
