@@ -1,10 +1,20 @@
-import {Clock} from './Clock.stories';
+import React, {useEffect, useState} from 'react';
 
-export default {
-    title: 'Clock',
-    component: Clock
-}
+type PropsType = {}
 
-export const BaseExample = () => {
-    return <Clock/>
+export const Clock: React.FC<PropsType> = (props) => {
+    const [date, setDate] = useState(new Date())
+
+    useEffect(() => {
+        setInterval(() => {
+        }, 1000)
+    })
+
+    return <div>
+        <span>{date.getHours()}</span>
+        :
+        <span>{date.getMinutes()}</span>
+        :
+        <span>{date.getSeconds()}</span>
+    </div>
 }

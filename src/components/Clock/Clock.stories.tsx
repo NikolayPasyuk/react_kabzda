@@ -1,15 +1,10 @@
-import React, {useState} from 'react';
+import {Clock} from './Clock';
 
-type PropsType = {}
+export default {
+    title: 'Clock',
+    component: Clock
+}
 
-export const Clock: React.FC<PropsType> = (props) => {
-    const [date, setDate] = useState(new Date())
-
-    return <div>
-        <span>{date.getHours()}</span>
-        :
-        <span>{date.getMinutes()}</span>
-        :
-        <span>{date.getSeconds()}</span>
-    </div>
+export const BaseExample = () => {
+    return <Clock/>
 }
