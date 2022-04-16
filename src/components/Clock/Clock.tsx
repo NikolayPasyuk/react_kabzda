@@ -11,6 +11,8 @@ export const Clock: React.FC<PropsType> = (props) => {
         }, 1000)
     }, [])
 
+    const secondsString = date.getSeconds()
+
     return <div>
         <span>{date.getHours()}</span>
         :
