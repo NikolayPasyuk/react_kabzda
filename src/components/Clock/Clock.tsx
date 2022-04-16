@@ -7,8 +7,9 @@ export const Clock: React.FC<PropsType> = (props) => {
 
     useEffect(() => {
         setInterval(() => {
+            setDate(new Date())
         }, 1000)
-    })
+    }, [])
 
     return <div>
         <span>{date.getHours()}</span>
