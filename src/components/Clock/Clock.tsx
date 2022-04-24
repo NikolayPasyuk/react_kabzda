@@ -28,12 +28,7 @@ export const Clock: React.FC<PropsType> = (props) => {
             break
         case 'digital':
         default:
-            view = <><span>{get2digitsString(date.getHours())}</span>
-                :
-                <span>{get2digitsString(date.getMinutes())}</span>
-                :
-                <span>{get2digitsString(date.getSeconds())}</span>
-            </>
+            view = <DigitalClockView date={date}/>
     }
 
     return <div>
