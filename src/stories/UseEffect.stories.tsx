@@ -34,24 +34,23 @@ export const SimpleExample = () => {
 }
 
 
-export const SetTimeoutExample = () => {
-    const [fake, setFake] = useState(1)
+export const SetIntervalExample = () => {
     const [counter, setCounter] = useState(1)
 
     console.log('SetTimeoutExample')
 
     useEffect(() => {
 
-        setInterval(() => {
+        const intervalId = setInterval(() => {
             setCounter(state => state + 1)
         }, 1000)
+
+        clearInterval(intervalId)
 
     }, [])
 
     return <>
-        Hello, counter: {counter} - fake: {fake}
-        {/* <button onClick={() => setFake(fake + 1)}>fake+</button>
-        <button onClick={() => setCounter(counter + 1)}>counter+</button>*/}
+        Hello, counter: {counter}
     </>
 }
 
@@ -96,11 +95,34 @@ export const KeysTrackerExample = () => {
         window.addEventListener('keypress', handler)
 
         return () => {
-            // window.removeEventListener('keypress', handler)
+            window.removeEventListener('keypress', handler)
         }
 
     }, [text])
 
+
+    return <>
+        Typed text: {text}
+    </>
+}
+
+
+export const SetTimeoutExample = () => {
+
+    const [text, setText] = useState('')
+
+    console.log('Component rendered with ' + text)
+
+    useEffect(() => {
+        const timeoutId = setTimeout(() => {
+            console.log('TIMEOUT EXPIRED')
+            setText('3 seconds passed')
+        }, 3000)
+
+        return () => {
+            clearTimeout(timeoutId)
+        }
+    }, [text])
 
     return <>
         Typed text: {text}
