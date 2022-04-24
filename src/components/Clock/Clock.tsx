@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {DigitalClockView} from './DigitalClockView';
+import {AnalogClockView} from './AnalogClockView';
 
 type PropsType = {
     mode?: 'digital' | 'analog'
@@ -41,6 +42,3 @@ export type ClockViewPropsType = {
     date: Date
 }
 
-export const AnalogClockView: React.FC<ClockViewPropsType> = ({date}) => {
-    return <span>ANALOG</span>
-}
