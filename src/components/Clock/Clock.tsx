@@ -24,7 +24,7 @@ export const Clock: React.FC<PropsType> = (props) => {
 
     switch (props.mode) {
         case 'analog':
-            view = <span>ANALOG</span>
+            view = <AnalogClockView date={date}/>
             break
         case 'digital':
         default:
