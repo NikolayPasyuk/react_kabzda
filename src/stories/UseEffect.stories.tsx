@@ -82,12 +82,15 @@ export const ResetEffectExample = () => {
 
 
 export const KeysTrackerExample = () => {
-    const [text, setText] = useState(1)
+    const [text, setText] = useState('')
 
     console.log('Component rendered with' + text)
 
     useEffect(() => {
-
+        window.addEventListener('keypress', (e) => {
+            console.log(e.code)
+            setText((state) => state + e.code)
+        })
 
     }, [])
 
