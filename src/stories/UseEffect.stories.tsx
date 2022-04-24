@@ -63,7 +63,12 @@ export const ResetEffectExample = () => {
 
     useEffect(() => {
         console.log('Effect occurred')
-    })
+
+        return () => {
+            console.log('RESET EFFECT')
+        }
+
+    }, [])
 
     const increase = () => {
         setCounter(counter + 1)
