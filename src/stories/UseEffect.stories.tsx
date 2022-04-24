@@ -79,3 +79,20 @@ export const ResetEffectExample = () => {
         <button onClick={increase}>+</button>
     </>
 }
+
+
+export const KeysTrackerExample = () => {
+    const [text, setText] = useState(1)
+
+    console.log('Component rendered with' + text)
+
+    useEffect(() => {
+
+
+    }, [])
+
+
+    return <>
+        Typed text:{text}
+    </>
+}
