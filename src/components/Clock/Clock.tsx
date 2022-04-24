@@ -1,6 +1,8 @@
 import React, {useEffect, useState} from 'react';
 
-type PropsType = {}
+type PropsType = {
+    mode:'digital' | 'analog'
+}
 
 const get2digitsString = (num: number) => num < 10 ? '0' + num : num
 
