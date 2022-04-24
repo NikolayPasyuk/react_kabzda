@@ -90,16 +90,16 @@ export const KeysTrackerExample = () => {
 
         const handler = (e: KeyboardEvent) => {
             console.log(e.key)
-            setText((state) => state + e.key)
+            setText(text + e.key)
         }
 
         window.addEventListener('keypress', handler)
 
         return () => {
-            window.removeEventListener('keypress', handler)
+            // window.removeEventListener('keypress', handler)
         }
 
-    }, [])
+    }, [text])
 
 
     return <>
